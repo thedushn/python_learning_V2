@@ -6,25 +6,25 @@
 
 
 condition = True
-car_on_off = False
+started = False
 print ("input commands")
-while condition:
+while True:
     state = raw_input()
     state = state.lower()
     if state == "start":
-        if car_on_off:
+        if started:
             print("already on")
         else:
-            car_on_off = True
+            started = True
             print("started")
     elif state == "stop":
-        if not car_on_off:
+        if not started:
             print("already off")
         else:
-            car_on_off = False
+            started = False
             print("stopped")
     elif state == "quit":
-        condition = False
+        break
     elif state == "help":
         print("start\nstop\nquit\n")
     else:
